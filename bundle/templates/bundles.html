@@ -10,3 +10,10 @@
 {% for bundle in bundles|dictsort:"get_length_value" %}
     {{ bundle.name }}: {{ bundle.length }}
 {% endfor %}
+
+==========
+
+<p>测试改了manager 以后的manytomany set</p>
+{% for bundle in bundles|sort(attribute='length') %}
+    {{ bundle.name }}: {{ bundle.length }}
+{% endfor %}
