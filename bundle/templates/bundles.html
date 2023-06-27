@@ -1,0 +1,12 @@
+<p>Bundles:</p>
+{{ bundles }}
+
+<p>Unsorted:</p>
+{% for bundle in bundles %}
+    {{ bundle.name }}: {{ bundle.length }}
+{% endfor %}
+
+<p>Sorted:</p>
+{% for bundle in bundles|dictsort:"get_length_value" %}
+    {{ bundle.name }}: {{ bundle.length }}
+{% endfor %}
